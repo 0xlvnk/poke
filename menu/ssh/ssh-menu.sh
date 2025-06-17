@@ -17,8 +17,8 @@ while true; do
     echo -ne "\\nSelect option: "; read opt
 
     case $opt in
-        1) bash "$ROOT/ssh/create.sh" ;;
-        2) bash "$ROOT/ssh/list.sh" ;;
+        1) clear; bash "$ROOT/ssh/create.sh"; read -n1 -r -p "Press any key to return..." ;;
+        2) clear; bash "$ROOT/ssh/list.sh"; read -n1 -r -p "Press any key to return..." ;;
         3) bash "$ROOT/ssh/delete.sh" ;;
         4) bash "$ROOT/ssh/lock.sh" ;;
         5) bash "$ROOT/ssh/unlock.sh" ;;
