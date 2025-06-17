@@ -1,5 +1,8 @@
 #!/bin/bash
-source /root/menu/utils/menu-header.sh
+
+# Pastikan path dinamis (jalankan dari folder mana pun)
+BASE_DIR=$(dirname "$(readlink -f "$0")")
+source "$BASE_DIR/utils/menu-header.sh"
 
 clear
 print_header "VPS MENU"
@@ -19,11 +22,11 @@ echo -e "x)  Exit"
 echo -ne "\nSelect menu: "; read menu
 
 case $menu in
-    1) bash /root/menu/ssh/ssh-menu.sh ;;
-    2) bash /root/menu/vmess/create.sh ;;
+    1) bash "$BASE_DIR/ssh/ssh-menu.sh" ;;
+    2) bash "$BASE_DIR/vmess/create.sh" ;;
     3) echo "Vless Menu (coming soon)" ;;
     4) echo "Trojan Menu (coming soon)" ;;
-    5) bash /root/menu/utils/set-banner.sh ;;
+    5) bash "$BASE_DIR/utils/set-banner.sh" ;;
     6) ss -tunlp | less ;;
     7) systemctl restart ssh && echo "SSH Restarted" ;;
     8) speedtest-cli ;;
