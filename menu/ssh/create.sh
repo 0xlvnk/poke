@@ -1,7 +1,7 @@
 #!/bin/bash
 BASE_DIR=$(dirname "$(readlink -f "$0")")
 ROOT_DIR=$(dirname "$BASE_DIR")
-source "$ROOT_DIR/utils/menu-header.sh"
+source "$ROOT_DIR/utils/ssh-header.sh"
 
 if [[ -f /etc/xray/domain ]]; then
     DOMAIN=$(cat /etc/xray/domain)
