@@ -1,5 +1,5 @@
 #!/bin/bash
-clear
+
 if [[ -f /etc/xray/domain ]]; then
     DOMAIN=$(cat /etc/xray/domain)
 else
